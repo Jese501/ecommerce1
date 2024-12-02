@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - LooksMaxxing | Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="images/icon LM.png" type="image/x-icon">
+    <!-- Add this in the <head> section of your HTML file -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background: linear-gradient(to bottom, #222121, #726d6d);
+        }
+        
+
+        /* Header Logo */
+.navbar .logo img {
+    width: 120px; /* Set the size of the logo */
+    height: 120px; /* Ensure the logo is square */
+    border-radius: 50%; /* Make the logo circular */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+
+        nav {
+            flex: 1;
+            text-align: right;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            padding: 10px 15px;
+            background-color: #FFD700;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #f1c40f;
+            transform: scale(1.05);
+        }
+
+        /* Cart Styling */
+        .navbar .cart {
+            background-color: #FFD700;
+            padding: 10px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar .cart img {
+            width: 25px;
+            height: 25px;
+        }
+
+        /* Single Product Page */
+        .small-container {
+            max-width: 1170px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .single-product {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .col-2 {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .col-2 img {
+            width: 100%;
+        }
+
+        .small-img-row {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .small-img-col {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .small-img-col img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .col-2 h1 {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .col-2 h4 {
+            font-size: 22px;
+            color: #888;
+            margin: 10px 0;
+        }
+
+        .col-2 select,
+        .col-2 input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .col-2 input {
+            width: 80px;
+            margin-right: 10px;
+        }
+
+        .button {
+            background-color: #FFD700;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #f1c40f;
+        }
+
+        .row-2 {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .row-2 a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .row-2 a:hover {
+            text-decoration: underline;
+        }
+
+        /* Location Section */
+        .location {
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .location h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .location select {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .location select:focus {
+            outline: none;
+            border-color: #FFD700; /* Gold color for focus */
+        }
+
+        /* Related Products */
+.row {
+    display: flex; /* Use flexbox to align items in a row */
+    justify-content: space-between; /* Ensure there's space between items */
+    gap: 20px; /* Add space between the items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    margin-top: 50px; /* Space between product section and related products */
+}
+
+.col-4 {
+    flex: 1 1 22%; /* Allow the columns to take up 22% of the container width, adjust as needed */
+    text-align: center; /* Center the content inside the columns */
+    box-sizing: border-box; /* Ensure padding and borders are included in the element's total width */
+}
+
+.col-4 img {
+    width: 100%; /* Make the image take up the full width of the column */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+        /* Footer Styling */
+.footer {
+    background: #2f2d2e;
+    color: #cfc7c7;
+    font-size: 14px;
+    padding: 40px 0;
+    text-align: center; /* Center all text in footer */
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column; /* Stack the columns vertically */
+    align-items: center; /* Center align the content */
+    justify-content: center; /* Center content vertically */
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    justify-content: center; /* Center content horizontally */
+    width: 100%;
+    margin-bottom: 30px; /* Spacing between footer rows */
+}
+
+.footer-col-2, .footer-col-3, .footer-col-4 {
+    min-width: 250px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-col-2 img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+/* Styling for Quick Links and other sections */
+.footer-col-3 .list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-col-3 .list li a {
+    color: #cfc7c7; /* Set link color to match footer text */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s;
+}
+
+.footer-col-3 .list li a:hover {
+    color: #ff5733; /* Highlight color on hover */
+}
+
+/* Social Icons */
+.social-icons a {
+    margin: 0 15px;
+    font-size: 30px;
+    color: #fff;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #ff5733; /* Color change on hover */
+}
+
+hr {
+    border-color: #8a8a8a;
+    margin: 20px 0;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #8a8a8a;
+    text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer .container {
+        padding: 0 20px;
+    }
+}
+
+  
+
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/mode enchantee logo.png" width="180px" alt="Logo"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Product</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="cart.html"><img src="images/cart.png" alt="Cart" width="30px" height="30px"></a>
+            </div>
+        </div>   
+    </div>
+
+    <!-------------------single product details----------------->
+    <div class="small-container single-product">
+        <div class="col-2">
+            <img src="images/PRODUCT1.webp" width="100%" id="ProductImg">
+            <div class="small-img-row">
+                <div class="small-img-col">
+                    <img src="images/PRODUCT1.webp" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PRODUCT1.2.webp" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PRODUCT1.3.webp" width="100%" class="small-img">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/PRODUCT1.4.webp" width="100%" class="small-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <h1>100% Linen Bermuda Shorts With Drawstring</h1>
+            <h4>P250.00</h4>
+            <select>
+                <option>Select Size</option>
+                <option>XL</option>
+                <option>Large</option>
+                <option>Medium</option>
+                <option>Small</option>
+            </select>
+            <input type="number" value="1">
+            <a href="cart.html" class="button">Add to Cart</a>
+
+            <!-- Location Section (Now below the sizing section) -->
+            <div class="location">
+                <h2>Enter Your Location</h2>
+                <select id="location">
+                    <option value="">Select Your Location</option>
+                    <option value="manila">Manila</option>
+                    <option value="cebu">Cebu</option>
+                    <option value="davao">Davao</option>
+                    <option value="quezon">Quezon City</option>
+                    <option value="makati">Makati</option>
+                    <option value="taguig">Taguig</option>
+                    <option value="antipolo">Antipolo</option>
+                    <!-- Add more cities here as needed -->
+                </select>
+            </div>
+        </div>
+    </div>
+    <!------Title------>
+<div class="small-container">
+    <div class="row row-2">
+        <h2>Recommend Products</h2>
+        <a href="products.html"><p class="view">View More</p></a>
+    </div>
+</div>
+
+
+
+<!------Products---->
+<div class="small-container">
+    <div class="row">
+        <div class="col-4">
+            <a href="3Product.html"><img src="images/PRODUCT3.webp"></a>
+            <h4>Relaxed-fit sweatshirt with text print </h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>499.00</p>
+        </div>
+        <div class="col-4">
+            <a href="7Product.html"><img src="images/PRODUCT7.webp"></a>
+            <h4> Classic Knitted Cardigan</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>P630.00</p>
+        </div>
+        <div class="col-4">
+            <a href="12Product.html"><img src="images/PRODUCT12.webp"></a>
+            <h4>UA Rival Terry Short  </h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <p>300.00</p>
+        </div>
+        <div class="col-4">
+            <a href="15Product.html"><img src="images/PRODUCT15.webp"></a>
+            <h4>Ruched Midi Skirt </h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <p>400.00</p>
+        </div>
+    </div>
+
+</div>
+    <!-- Footer Section -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-2 logo">
+                <img src="images/mode enchantee logo.png" alt="Mode Enchantee Logo">
+            </div>
+            <div class="footer-col-2 contact-us">
+                <h1>Contact Us</h1>
+                <p>Email: <a href="mailto:castillojese78@gmail.com">castillojese78@gmail.com</a></p>
+                <p>Phone: <a href="tel:+639104467994">09104467994</a></p>
+                <p>Address: UCPT</p>
+            </div>
+            <div class="footer-col-3 quick-links">
+                <h1>Quick Links</h1>
+                <ul class="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="account.html">Account</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-4 follow-us">
+                <h1>Follow Us</h1>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2024 - ModeEnchantee | Fashion</p>
+    </div>
+</div>
+<script src="js/toggle.js"></script>
+<script src="js/cart.js"></script>
+
+
+
+   
+</body>
+</html>
